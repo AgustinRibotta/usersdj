@@ -29,7 +29,10 @@ DJANGO_APPS =  (
 )
 
 # Local Apps
-LOCAL_APPS = ()
+LOCAL_APPS = (
+    'applications.home',
+    'applications.users',
+)
 
 # Third Party Apps
 THIRD_PARTY_APPS = ()
@@ -84,6 +87,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Indicamos donde esta el nuevo modelo de user
+AUTH_USER_MODEL = 'users.User'
 
 LANGUAGE_CODE = 'en-us'
 
@@ -94,3 +99,4 @@ USE_I18N = True
 USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
