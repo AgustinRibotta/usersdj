@@ -31,8 +31,19 @@ class User(AbstractBaseUser, PermissionsMixin):
         choices= GENDER_CHOICES,
         blank=True
     )
+    is_staff = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
+    cod_register = models.CharField(
+        'Registration code', 
+        max_length=6,
+        blank=True,
+    )
     
+    # Le indicamos en base a que va a crear el usuario
     USERNAME_FIELD ='username'
+    
+    # Le indicamos cuales van a ser los requisitos
+    REQUIRED_FIELDS =['email',]
     
     objects = UserManager()
     

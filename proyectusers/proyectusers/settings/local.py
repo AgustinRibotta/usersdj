@@ -23,3 +23,10 @@ STATIC_DIR = BASE_DIR.child('static')
 # Direction off MEDIA
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.child('media')
+
+# Acceso al correo 
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = get_secret("EMAIL")
+EMAIL_HOST_PASSWORD =get_secret("EMAIL_PASSWORD")
+EMAIL_PORT = 587
